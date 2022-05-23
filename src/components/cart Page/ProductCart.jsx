@@ -44,6 +44,7 @@ const ProductCart = (props) => {
       .patch("/api/data/carts/deleteItem/" + _id)
       .then((res) => {
         console.log(res.data);
+        console.log("delete call")
         toast.success("Item Deleted Successfully");
 
         setItems((items) => {
@@ -154,7 +155,7 @@ const ProductCart = (props) => {
                   style={{ fontSize: "50", color: "red" }}
                   onClick={(e) => handledeleteitem(item._id)}
                 >
-                  Remove
+                
                 </DeleteOutlineOutlined>
               </td>
             </tr>
