@@ -21,6 +21,8 @@ const Cart = () => {
   const [gt, setGT] = useState(0);
   const [deletedID, setDeletedID] = useState("");
   const bt = useSelector(getBuildTotal);
+  console.log("price");
+  console.log(bt)
   useEffect(() => {
     setGT(productTotal + CustomTotal);
   }, [productTotal, CustomTotal]);

@@ -3,9 +3,13 @@ import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import car1 from "../../Assets/car1.jpg";
 
-import car2 from "../../Assets/car2.jpg";
+import thunder from "../../Assets/thunder.jpg";
 
+<<<<<<< HEAD
 import car3 from "../../Assets/car3.jpeg";
+=======
+import custompc from "../../Assets/custompc.png";
+>>>>>>> d4093e9aa8a24aeb5dd20b17c977d94a44e18034
 import "./Carousel.css";
 
 const CarouselComp = () => {
@@ -22,7 +26,7 @@ const CarouselComp = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item interval={3000}>
-          <img className="m-block w-55" src={car2} alt="Second slide" />
+          <img className="m-block w-55" src={thunder} alt="Second slide" />
           <div className="divpos">
             <Carousel.Caption className="caption">
               <h3>Get your desired tech</h3>
@@ -31,7 +35,7 @@ const CarouselComp = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item interval={3000}>
-          <img className="m-block w-55" src={car3} alt="Third slide" />
+          <img className="m-block w-55" src={custompc} alt="Third slide" />
           <div>
             <Carousel.Caption className="caption">
               <h3>In a hurry?</h3>
