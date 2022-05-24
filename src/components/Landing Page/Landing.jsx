@@ -56,14 +56,14 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="trendContainer">
+      {/* <div className="trendContainer">
         <div className="trendHeading">
           <p className="textTrend">Trending Products</p>
         </div>
         <div className="cards">
           <TrendingProducts />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
