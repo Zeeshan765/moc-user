@@ -5,7 +5,7 @@ import car1 from "../../Assets/car1.jpg";
 
 import car2 from "../../Assets/car2.jpg";
 
-import car3 from "../../Assets/med.jpg";
+import car3 from "../../Assets/car3.jpeg";
 import "./Carousel.css";
 
 const CarouselComp = () => {
@@ -34,10 +34,8 @@ const CarouselComp = () => {
           <img className="m-block w-55" src={car3} alt="Third slide" />
           <div>
             <Carousel.Caption className="caption">
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h3>In a hurry?</h3>
+              <p>Here are our top picks to build your desired PC in 2022! </p>
             </Carousel.Caption>
           </div>
         </Carousel.Item>
