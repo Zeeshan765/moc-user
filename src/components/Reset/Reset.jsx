@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import Image from './bg.jpg';
 import { deepOrange } from '@material-ui/core/colors';
 import apiService from '../../services/ApiService';
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -131,6 +133,8 @@ const Reset = (props) => {
   const classes = useStyles();
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState("");
+  const history = useHistory();
+
 
   const token = props.match.params.resetToken;
 
@@ -145,6 +149,8 @@ const Reset = (props) => {
           icon: 'success',
           button: 'Ok ',
         });
+        history.push("/login");
+
       })
       .catch((error) => {
         swal({

@@ -5,11 +5,7 @@ import car1 from "../../Assets/car1.jpg";
 
 import thunder from "../../Assets/thunder.jpg";
 
-<<<<<<< HEAD
 import car3 from "../../Assets/car3.jpeg";
-=======
-import custompc from "../../Assets/custompc.png";
->>>>>>> d4093e9aa8a24aeb5dd20b17c977d94a44e18034
 import "./Carousel.css";
 
 const CarouselComp = () => {
@@ -35,7 +31,7 @@ const CarouselComp = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item interval={3000}>
-          <img className="m-block w-55" src={custompc} alt="Third slide" />
+          <img className="m-block w-55" src={car3} alt="Third slide" />
           <div>
             <Carousel.Caption className="caption">
               <h3>In a hurry?</h3>
