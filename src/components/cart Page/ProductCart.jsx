@@ -45,7 +45,9 @@ const ProductCart = (props) => {
       .then((res) => {
         console.log(res.data);
         console.log("delete call")
-        toast.success("Item Deleted Successfully");
+        toast.success("Item Deleted Successfully",{
+          theme:"colored"
+        });
 
         setItems((items) => {
           return items.filter((item) => {

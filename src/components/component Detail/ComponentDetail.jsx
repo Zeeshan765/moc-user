@@ -45,10 +45,9 @@ const ComponentDetail = (props) => {
   };
 
   let decrementCount = () => {
-    setQuantity(quantity - 1);
+    quantity > 1 && setQuantity(quantity - 1);
   };
 
- 
   //Get Reviews
   const getCommentData = () => {
     apiService.get(`/api/components/${product}/get/comments`).then((data) => {
@@ -92,7 +91,7 @@ const ComponentDetail = (props) => {
         <div className="prodata">
           <p className="titleText">{name}</p>
           <hr></hr>
-         
+
           <hr></hr>
           <h4 className="info1">➤ {info1}</h4>
 
@@ -140,7 +139,6 @@ const ComponentDetail = (props) => {
           <button className="cartBtn" onClick={handleaddtocart}>
             Add to Cart
           </button>
-          
         </div>
       </div>
       <div>

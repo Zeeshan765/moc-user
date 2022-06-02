@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 //import userService from '../components/services/UserService';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Button } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
+
 //import userService from "../services/UserService";
 
 import Grid from '@material-ui/core/Grid';
@@ -134,7 +136,10 @@ const Reset = (props) => {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const history = useHistory();
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 
   const token = props.match.params.resetToken;
 
@@ -150,7 +155,10 @@ const Reset = (props) => {
           button: 'Ok ',
         });
         history.push("/login");
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
       })
       .catch((error) => {
         swal({

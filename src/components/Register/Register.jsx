@@ -21,7 +21,7 @@ import apiService from "../../services/ApiService";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "130vh",
 
     backgroundImage: `url(${Image})`,
     backgroundSize: "cover",
@@ -100,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
 
   floatingLabelFocusStyle: {
     color: "white",
-    fontSize: "20px",
+    fontSize: "25px",
   },
 
   orange: {
@@ -244,7 +244,7 @@ const Register = (props) => {
                   required
                   fullWidth
                   id="name"
-                  label="UserName"
+                  label="User Name"
                   name="name"
                   autoComplete="name"
                   autoFocus
@@ -254,7 +254,7 @@ const Register = (props) => {
                   helperText={
                     userNameValidation(name)
                       ? " "
-                      : "UserName must be between 5 to 15 characters"
+                      : "User Name must be between 5 to 15 characters"
                   }
                   error={!userNameValidation(name)}
                 />

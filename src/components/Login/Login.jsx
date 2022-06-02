@@ -210,7 +210,7 @@ const Login = (props) => {
                   href="/forgetpassword"
                   variant="body2"
                 >
-                  {"Forget Password"}
+                  {"Forgot Password? Click here!"}
                 </Link>
               </Grid>
             </Grid>

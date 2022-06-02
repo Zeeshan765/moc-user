@@ -109,7 +109,7 @@ const PeripheralPage = (props) => {
             <div className="filterBox">
               <Slider
                 className="sliderText"
-                value={price}
+                value={price} 
                 onChange={priceHandler}
                 valueLabelDisplay="on"
                 aria-labelledby="range-slider"

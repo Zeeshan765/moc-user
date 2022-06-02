@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import car1 from "../../Assets/car1.jpg";
 
-import thunder from "../../Assets/thunder.jpg";
+import car2 from "../../Assets/car2.jpg";
 
 import car3 from "../../Assets/car3.jpeg";
 import "./Carousel.css";
@@ -12,7 +12,7 @@ const CarouselComp = () => {
   return (
     <div>
       <Carousel className="carousel" variant="dark">
-        <Carousel.Item interval={3000}>
+        <Carousel.Item interval={1500}>
           <img className="m-block w-55" src={car1} alt="First slide" />{" "}
           <div className="divpos">
             <Carousel.Caption className="caption">
@@ -21,8 +21,8 @@ const CarouselComp = () => {
             </Carousel.Caption>
           </div>
         </Carousel.Item>
-        <Carousel.Item interval={3000}>
-          <img className="m-block w-55" src={thunder} alt="Second slide" />
+        <Carousel.Item interval={1500}>
+          <img className="m-block w-55" src={car2} alt="Second slide" />
           <div className="divpos">
             <Carousel.Caption className="caption">
               <h3>Get your desired tech</h3>
@@ -30,8 +30,13 @@ const CarouselComp = () => {
             </Carousel.Caption>{" "}
           </div>
         </Carousel.Item>
+<<<<<<< Updated upstream
         <Carousel.Item interval={3000}>
           <img className="m-block w-55" src={car3} alt="Third slide" />
+=======
+        <Carousel.Item interval={1500}>
+          <img className="m-block w-55" src={car3} alt="Third slide"/>
+>>>>>>> Stashed changes
           <div>
             <Carousel.Caption className="caption">
               <h3>In a hurry?</h3>
