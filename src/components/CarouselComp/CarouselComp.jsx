@@ -30,13 +30,8 @@ const CarouselComp = () => {
             </Carousel.Caption>{" "}
           </div>
         </Carousel.Item>
-<<<<<<< Updated upstream
         <Carousel.Item interval={3000}>
           <img className="m-block w-55" src={car3} alt="Third slide" />
-=======
-        <Carousel.Item interval={1500}>
-          <img className="m-block w-55" src={car3} alt="Third slide"/>
->>>>>>> Stashed changes
           <div>
             <Carousel.Caption className="caption">
               <h3>In a hurry?</h3>

@@ -13,7 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import Image from './bg.jpg';
 import { deepOrange } from '@material-ui/core/colors';
 import apiService from '../../services/ApiService';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -136,10 +136,6 @@ const Reset = (props) => {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState("");
   const history = useHistory();
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
   const token = props.match.params.resetToken;
 
@@ -155,10 +151,6 @@ const Reset = (props) => {
           button: 'Ok ',
         });
         history.push("/login");
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
       })
       .catch((error) => {
         swal({

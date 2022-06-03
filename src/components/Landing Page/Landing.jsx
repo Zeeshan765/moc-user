@@ -23,7 +23,6 @@ const Landing = () => {
         <div className="bgfull">
           <img width="2020" height="900" src={bg}></img>
 
-          {/* <img src={Circle} alt="circle" className="circle-bg" /> */}
         </div>
         <div className="content-section">
           <div className="left-content">
