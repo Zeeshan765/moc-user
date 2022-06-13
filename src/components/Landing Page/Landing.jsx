@@ -9,6 +9,8 @@ import "./Landing.css";
 import CarouselComp from "../CarouselComp/CarouselComp";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Chat from "../Chat/Chat";
+
 const Landing = () => {
   const history = useHistory();
 
@@ -53,7 +55,7 @@ const Landing = () => {
           <CarouselComp />
         </div>
       </div>
-
+      <Chat /> 
       {/* <div className="trendContainer">
         <div className="trendHeading">
           <p className="textTrend">Trending Products</p>
