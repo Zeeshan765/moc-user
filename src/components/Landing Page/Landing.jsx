@@ -22,7 +22,6 @@ const Landing = () => {
       <div className="video-section">
         <div className="bgfull">
           <img width="2020" height="900" src={bg}></img>
-
         </div>
         <div className="content-section">
           <div className="left-content">
