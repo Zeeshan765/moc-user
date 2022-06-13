@@ -38,7 +38,7 @@ const ComponentsPage = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `http://localhost:5000/api/components/search/${keyword}`
+        `http://localhost:4000/api/components/search/${keyword}`
       );
       if (keyword.length > 0) {
         setMenuData(res.data);
@@ -52,7 +52,7 @@ const ComponentsPage = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get(
-        `http://localhost:5000/api/components/filter/${price[0]}/${price[1]}`
+        `http://localhost:4000/api/components/filter/${price[0]}/${price[1]}`
       );
       //setPrice(res.data)
       setMenuData(res.data);
