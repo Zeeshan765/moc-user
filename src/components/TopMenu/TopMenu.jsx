@@ -5,7 +5,7 @@ import Account from "../../Assets/account.png";
 import Cart from "../../Assets/cart.png";
 import apiService from "../../services/ApiService";
 import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+import "reactjs-popup/dist/index.css"; 
 import "./TopMenu.css";
 import { useState, useEffect } from "react";
 import {

@@ -54,8 +54,9 @@ const Landing = () => {
         <div className="product-container">
           <CarouselComp />
         </div>
+        {/* <Chat />  */}
       </div>
-      <Chat /> 
+     
       {/* <div className="trendContainer">
         <div className="trendHeading">
           <p className="textTrend">Trending Products</p>
@@ -64,6 +65,7 @@ const Landing = () => {
           <TrendingProducts />
         </div>
       </div> */}
+      <Chat /> 
     </div>
   );
 };
