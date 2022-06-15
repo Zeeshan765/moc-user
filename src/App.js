@@ -35,7 +35,7 @@ import UserOrder from "./components/my orders/UserOrder";
 import SimpleSuccess from "./components/order success/SimpleSuccess";
 import Thankyou from "./components/CustomPC/CustomPCScreen/Thankyou";
 import Vieworder from "./components/my orders/Vieworder";
-
+import Emailverify from "./components/Emailverify";
 const App = () => {
   const [clicked, setClicked] = React.useState(null);
   const getClicked = () => {
@@ -52,6 +52,8 @@ const App = () => {
           <Route path="/login" exact component={Login} />
           <Route path="/forgetpassword" exact component={Forget} />
           <Route path="/passwordreset/:resetToken" exact component={Reset} />
+          <Route path="/confirmation/:verifyToken/:id" exact component={Emailverify}/>
+
           <Route path="/profile" exact component={Profile} />
           <Route path="/selection" exact component={SelectionPage} />
           <Route path="/budget" exact component={BudgetPage} />
