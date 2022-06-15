@@ -10,6 +10,7 @@ import CarouselComp from "../CarouselComp/CarouselComp";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Chat from "../Chat/Chat";
+import Footer from "../Footer/Footer";
 
 const Landing = () => {
   const history = useHistory();
@@ -33,11 +34,7 @@ const Landing = () => {
               <span className="TextPC">Custom PCs</span>
             </p>
 
-            <Button
-              className="btnStart"
-              size="lg"
-              onClick={handleClick}
-            >
+            <Button className="btnStart" size="lg" onClick={handleClick}>
               Start Your Build!
             </Button>
           </div>
@@ -56,7 +53,7 @@ const Landing = () => {
         </div>
         {/* <Chat />  */}
       </div>
-     
+
       {/* <div className="trendContainer">
         <div className="trendHeading">
           <p className="textTrend">Trending Products</p>
@@ -65,7 +62,8 @@ const Landing = () => {
           <TrendingProducts />
         </div>
       </div> */}
-      <Chat /> 
+      <Chat />
+      <Footer />
     </div>
   );
 };
