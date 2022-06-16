@@ -5,9 +5,8 @@ import Account from "../../Assets/account.png";
 import Cart from "../../Assets/cart.png";
 import apiService from "../../services/ApiService";
 import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+import "reactjs-popup/dist/index.css"; 
 import "./TopMenu.css";
-import logo from "../../Assets/logo1.png";
 import { useState, useEffect } from "react";
 import {
   AccountBox,
@@ -27,7 +26,7 @@ import {
   Menu,
   Typography,
   IconButton,
-  Toolbar,
+  Toolbar, 
   Box,
   AppBar,
   makeStyles,
@@ -37,7 +36,7 @@ import transitions from "@material-ui/core/styles/transitions";
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
-    marginRight: theme.spacing(90),
+    marginRight: theme.spacing(100),
     marginTop: theme.spacing(2),
   },
   logo: {
@@ -48,14 +47,14 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     width: "100px",
-    color: "white",
+    color: "#ad69f0",
     padding: "7px",
     fontSize: "20px",
     fontWeight: "bold",
     marginLeft: theme.spacing(8),
     "&:hover": {
       backgroundColor: "rgb(135, 62, 202)",
-      color: "white",
+      color: "#e0d3ed",
       transition: "0.5s",
       borderRadius: "10px",
     },
@@ -155,7 +154,9 @@ const TopMenu = (props) => {
     >
       <CssBaseline />
       <Toolbar>
-        <img className="logo" src={logo} />
+        <Typography variant="h4" className={classes.logo}>
+          MoC
+        </Typography>
         <div className={classes.navlinks}>
           <Link to="/" className={classes.link}>
             Home
