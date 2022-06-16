@@ -1,50 +1,50 @@
-import React from 'react';
-import './register.css';
+import React from "react";
+import "./register.css";
 //import userService from '../../components/services/UserService';
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 //import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Button } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import { TextField, Button } from "@material-ui/core";
 //import userService from "../services/UserService";
-import validator from 'validator';
-import Avatar from '@material-ui/core/Avatar';
+import validator from "validator";
+import Avatar from "@material-ui/core/Avatar";
 
 //import Link from '@material-ui/core/Link';
 //import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Image from './bg.jpg';
-import { deepOrange } from '@material-ui/core/colors';
-import apiService from '../../services/ApiService';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Image from "./bg.jpg";
+import { deepOrange } from "@material-ui/core/colors";
+import apiService from "../../services/ApiService";
 //import { Register1 } from '../../redux/apiCalls';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '130vh',
+    height: "130vh",
 
     backgroundImage: `url(${Image})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
-    backgroundRepeat: 'no-repeat',
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
+    backgroundRepeat: "no-repeat",
   },
 
   background: {
-    backgroundRepeat: 'repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundRepeat: "repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
   },
   mainGrid: {
-    marginTop: '20px',
+    marginTop: "20px",
   },
   paper: {
-    justifyContent: 'center',
+    justifyContent: "center",
     margin: theme.spacing(8, 6),
 
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    height: 'inherit',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    height: "inherit",
   },
   avatar: {
     margin: theme.spacing(1),
@@ -57,50 +57,50 @@ const useStyles = makeStyles((theme) => ({
     //<Grid item sm={6} md={3} className={classes.background} />
   },
   form: {
-    width: '100%',
+    width: "100%",
     marginTop: theme.spacing(1),
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
   textField: {
-    width: '95%',
-    marginLeft: '20px',
-    marginRight: 'auto',
+    width: "95%",
+    marginLeft: "20px",
+    marginRight: "auto",
     paddingBottom: 0,
-    marginTop: '10px',
+    marginTop: "10px",
     fontWeight: 500,
   },
   input: {
-    color: 'white',
+    color: "white",
     //backgroundColor: '#362245',
     height: 80,
-    fontSize: '25px',
+    fontSize: "25px",
   },
   button: {
-    width: '70%',
+    width: "70%",
     height: 60,
-    marginTop: '40px',
-    fontSize: '20px',
-    marginLeft: '125px',
+    marginTop: "40px",
+    fontSize: "20px",
+    marginLeft: "125px",
   },
   checkBox: {
-    color: 'white',
+    color: "white",
   },
   Link: {
-    color: 'white',
-    fontSize: '18px',
-    marginTop: '40px',
+    color: "white",
+    fontSize: "18px",
+    marginTop: "40px",
   },
   SignText: {
-    color: 'white',
-    fontSize: '42px',
-    marginBottom: '5px',
+    color: "white",
+    fontSize: "42px",
+    marginBottom: "5px",
   },
 
   floatingLabelFocusStyle: {
-    color: 'white',
-    fontSize: '25px',
+    color: "white",
+    fontSize: "25px",
   },
 
   orange: {
@@ -111,12 +111,12 @@ const useStyles = makeStyles((theme) => ({
 
 const Register = (props) => {
   const classes = useStyles();
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState("");
 
-  const [email, setEmail] = React.useState('');
-  const [phone, setPhone] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [confirmPassword, setConfirmPassword] = React.useState('');
+  const [email, setEmail] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
 
   //const dispatch = useDispatch();
   const history = useHistory();
@@ -127,11 +127,11 @@ const Register = (props) => {
     e.preventDefault();
 
     apiService
-      .post('/api/auth/register', { password, email, name, phone })
+      .post("/api/auth/register", { password, email, name, phone })
       .then((res) => {
         console.log(res.data);
-        toast.success('Registerd Successfully');
-        history.push('/login');
+        toast.success("Registerd Successfully");
+        history.push("/login");
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -175,7 +175,7 @@ const Register = (props) => {
   const phoneValidation = (phone) => {
     if (
       phone.length === 11 &&
-      phone.startsWith('03') &&
+      phone.startsWith("03") &&
       phone.match(/^[0-9]+$/)
     ) {
       return true;
@@ -209,22 +209,22 @@ const Register = (props) => {
     ) {
       return true;
     } else {
-      console.log('false');
+      console.log("false");
       return false;
     }
   };
 
   return (
-    <Grid container component='main' className={classes.root}>
+    <Grid container component="main" className={classes.root}>
       <Grid item sm={6} md={3} className={classes.background} />
-      <Grid item style={{ backgroundColor: '#180c2b' }} md={6}>
-        <div style={{ color: '#474745' }} className={classes.paper}>
+      <Grid item style={{ backgroundColor: "#180c2b" }} md={6}>
+        <div style={{ color: "#474745" }} className={classes.paper}>
           <Avatar
             sm={{ width: 86, height: 86 }}
             className={classes.avatar}
             spacing={4}
           ></Avatar>
-          <Typography className={classes.SignText} component='h1' variant='h5'>
+          <Typography className={classes.SignText} component="h1" variant="h5">
             Sign up
           </Typography>
           <form className={classes.form} noValidate>
@@ -238,23 +238,23 @@ const Register = (props) => {
                   InputProps={{
                     className: classes.input,
                   }}
-                  variant='filled'
-                  margin='normal'
-                  color='secondary'
+                  variant="filled"
+                  margin="normal"
+                  color="secondary"
                   required
                   fullWidth
-                  id='name'
-                  label='User Name'
-                  name='name'
-                  autoComplete='name'
+                  id="name"
+                  label="User Name"
+                  name="name"
+                  autoComplete="name"
                   autoFocus
                   onChange={(e) => {
                     setName(e.target.value);
                   }}
                   helperText={
                     userNameValidation(name)
-                      ? ' '
-                      : 'User Name must be between 5 to 15 characters'
+                      ? " "
+                      : "User Name must be between 5 to 15 characters"
                   }
                   error={!userNameValidation(name)}
                 />
@@ -269,20 +269,20 @@ const Register = (props) => {
                   InputProps={{
                     className: classes.input,
                   }}
-                  variant='filled'
-                  margin='normal'
-                  color='secondary'
+                  variant="filled"
+                  margin="normal"
+                  color="secondary"
                   required
                   fullWidth
-                  id='phone'
-                  label='Phone Number'
-                  name='phone'
-                  autoComplete='phone'
+                  id="phone"
+                  label="Phone Number"
+                  name="phone"
+                  autoComplete="phone"
                   autoFocus
                   helperText={
                     phoneValidation(phone)
-                      ? ' '
-                      : 'Phone Number must be 11 digits and start with 03'
+                      ? " "
+                      : "Phone Number must be 11 digits and start with 03"
                   }
                   onChange={(e) => {
                     setPhone(e.target.value);
@@ -300,22 +300,22 @@ const Register = (props) => {
                   InputProps={{
                     className: classes.input,
                   }}
-                  variant='filled'
-                  margin='normal'
-                  color='secondary'
+                  variant="filled"
+                  margin="normal"
+                  color="secondary"
                   required
                   fullWidth
-                  id='email'
-                  label='Email Address'
-                  name='email'
-                  autoComplete='email'
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
                   autoFocus
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
                   error={!emailValidation(email)}
                   helperText={
-                    emailValidation(email) ? ' ' : 'Email Address is not valid'
+                    emailValidation(email) ? " " : "Email Address is not valid"
                   }
                 />
               </Grid>
@@ -323,8 +323,8 @@ const Register = (props) => {
               <Grid item xs={12}>
                 <TextField
                   className={classes.textField}
-                  variant='filled'
-                  margin='normal'
+                  variant="filled"
+                  margin="normal"
                   InputLabelProps={{
                     className: classes.floatingLabelFocusStyle,
                   }}
@@ -334,27 +334,27 @@ const Register = (props) => {
                   required
                   fullWidth
                   //backgroundColor="#fcfaf7"
-                  color='secondary'
-                  name='password'
-                  label='Password'
-                  type='password'
-                  id='password'
+                  color="secondary"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
                   error={!passwordValidation(password)}
                   helperText={
                     passwordValidation(password)
-                      ? ' '
-                      : 'Password must be at least 8 characters, one letter and one number'
+                      ? " "
+                      : "Password must be at least 8 characters, one letter and one number"
                   }
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   className={classes.textField}
-                  variant='filled'
-                  margin='normal'
+                  variant="filled"
+                  margin="normal"
                   InputLabelProps={{
                     className: classes.floatingLabelFocusStyle,
                   }}
@@ -364,19 +364,19 @@ const Register = (props) => {
                   required
                   fullWidth
                   //backgroundColor="#fcfaf7"
-                  color='secondary'
-                  name='confirmpassword'
-                  label='Confirm Password'
-                  type='password'
-                  id='confirmpassword'
+                  color="secondary"
+                  name="confirmpassword"
+                  label="Confirm Password"
+                  type="password"
+                  id="confirmpassword"
                   onChange={(e) => {
                     setConfirmPassword(e.target.value);
                   }}
                   error={!confirmPasswordValidation(password, confirmPassword)}
                   helperText={
                     confirmPasswordValidation(password, confirmPassword)
-                      ? ' '
-                      : 'Password and Confirm Password must be same'
+                      ? " "
+                      : "Password and Confirm Password must be same"
                   }
                 />
               </Grid>
@@ -385,11 +385,11 @@ const Register = (props) => {
             <br />
 
             <Button
-              justify='space-around'
+              justify="space-around"
               className={classes.button}
               fullWidth
-              variant='contained'
-              color='default'
+              variant="contained"
+              color="default"
               onClick={(e) => {
                 if (signupValidation()) {
                   handleregister(e);
@@ -400,7 +400,7 @@ const Register = (props) => {
             </Button>
             <Grid
               container
-              justify='space-around'
+              justify="space-around"
               spacing={4}
               style={{ padding: 20 }}
             ></Grid>

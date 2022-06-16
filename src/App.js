@@ -51,7 +51,6 @@ const App = () => {
           <Route path="/login" exact component={Login} />
           <Route path="/forgetpassword" exact component={Forget} />
           <Route path="/passwordreset/:resetToken" exact component={Reset} />
-
           <Route path="/profile" exact component={Profile} />
           <Route path="/selection" exact component={SelectionPage} />
           <Route path="/budget" exact component={BudgetPage} />
