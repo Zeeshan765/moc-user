@@ -10,7 +10,7 @@ import {
   Col,
   Button,
 } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
+import Card from "react-bootstrap/Card"; 
 
 const Singleperipheral = (props) => {
   const { data } = props;
