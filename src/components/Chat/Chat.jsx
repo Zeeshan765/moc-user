@@ -1,6 +1,7 @@
 import React from "react";
 // import ChatFeed from "react-chat-ui";/
 import { ChatFeed, ChatBubble, BubbleGroup, Message } from "react-chat-ui";
+import apiService from "../../services/ApiService";
 
 const styles = {
   button: {
@@ -44,17 +45,19 @@ class Chat extends React.Component {
     super();
     this.state = {
       messages: [
-        new Message({ id: "Mark", message: "Hey guys!", senderName: "Mark" }),
+    
         new Message({
           id: 2,
           message: (
             <p>
-              <span>11:50:</span>Hey! Evan here. react-chat-ui is pretty dooope.
+              <span>"Weclome to Multiverse of Computers" </span>
+              <span>"How may i help you?" </span>
             </p>
           ),
-          senderName: "Evan"
+          senderName: "Admin"
         })
       ],
+      content : "",
       useCustomBubble: false,
       curr_user: 0
     };
@@ -71,9 +74,24 @@ class Chat extends React.Component {
       return false;
     }
     this.pushMessage(this.state.curr_user, input.value);
+    apiService.post("/api/chat/send", {
+      content: input.value,
+    }).then((res) => {
+      console.log(res);
+      return true;
+    }
+      
+     
+  
+    ).catch((err) => {
+      console.log(err)
+      return false;
+    }
+    )
     input.value = "";
-    return true;
+  
   }
+
 
   pushMessage(recipient, message) {
     const prevState = this.state;
@@ -85,6 +103,7 @@ class Chat extends React.Component {
     prevState.messages.push(newMessage);
     this.setState(this.state);
   }
+
 
   render() {
     return (
@@ -118,24 +137,7 @@ class Chat extends React.Component {
             >
               You
             </button>
-            <button
-              style={{
-                ...styles.button,
-                ...(this.state.curr_user === "Mark" ? styles.selected : {})
-              }}
-              onClick={() => this.onPress("Mark")}
-            >
-              Mark
-            </button>
-            <button
-              style={{
-                ...styles.button,
-                ...(this.state.curr_user === 2 ? styles.selected : {})
-              }}
-              onClick={() => this.onPress(2)}
-            >
-              Evan
-            </button>
+            
           </div>
           <div
             style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
