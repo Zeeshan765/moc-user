@@ -1,7 +1,7 @@
 import React from "react";
 // import ChatFeed from "react-chat-ui";/
 import { ChatFeed, ChatBubble, BubbleGroup, Message } from "react-chat-ui";
-// import "./Chat.css";
+import apiService from "../../services/ApiService";
 import { Send } from "@material-ui/icons";
 
 const styles = {
@@ -46,17 +46,19 @@ class Chat extends React.Component {
     super();
     this.state = {
       messages: [
-        new Message({ id: "Mark", message: "Hey guys!", senderName: "Mark" }),
+    
         new Message({
           id: 2,
           message: (
-            <p className="texts">
-              <span>11:50:</span>Hey! Evan here. react-chat-ui is pretty dooope.
+            <p>
+              <span>"Weclome to Multiverse of Computers" </span>
+              <span>"How may i help you?" </span>
             </p>
           ),
-          senderName: "Evan",
-        }),
+          senderName: "Admin"
+        })
       ],
+      content : "",
       useCustomBubble: false,
       curr_user: 0,
     };
@@ -73,9 +75,24 @@ class Chat extends React.Component {
       return false;
     }
     this.pushMessage(this.state.curr_user, input.value);
+    apiService.post("/api/chat/send", {
+      content: input.value,
+    }).then((res) => {
+      console.log(res);
+      return true;
+    }
+      
+     
+  
+    ).catch((err) => {
+      console.log(err)
+      return false;
+    }
+    )
     input.value = "";
-    return true;
+  
   }
+
 
   pushMessage(recipient, message) {
     const prevState = this.state;
@@ -88,10 +105,30 @@ class Chat extends React.Component {
     this.setState(this.state);
   }
 
+
   render() {
     return (
-      <div className="containerChat">
-        {/* <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div className="container">
+        <div className="chatfeed-wrapper">
+          <ChatFeed
+            chatBubble={this.state.useCustomBubble && customBubble}
+            maxHeight={250}
+            messages={this.state.messages} // Boolean: list of message objects
+            showSenderName
+          />
+
+          <form onSubmit={e => this.onMessageSubmit(e)}>
+            <input
+            style={{height: "50px", width: "100%", border: "none", borderRadius: "20px", padding: "10px"}}
+              ref={m => {
+                this.message = m;
+              }}
+              placeholder="Type a message..."
+              className="message-input"
+            />
+          </form>
+
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button
               style={{
                 ...styles.button,
@@ -101,37 +138,15 @@ class Chat extends React.Component {
             >
               You
             </button>
+            
+          </div>
+          <form
+            style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
+          >
             <button
               style={{
                 ...styles.button,
-                ...(this.state.curr_user === "Mark" ? styles.selected : {}),
-              }}
-              onClick={() => this.onPress("Mark")}
-            >
-              Mark
-            </button>
-            <button
-              style={{
-                ...styles.button,
-                ...(this.state.curr_user === 2 ? styles.selected : {}),
-              }}
-              onClick={() => this.onPress(2)}
-            >
-              Evan
-            </button>
-          </div> */}
-        <div className="chatfeed-wrapper">
-          <ChatFeed
-            chatBubble={this.state.useCustomBubble && customBubble}
-            maxHeight={250}
-            messages={this.state.messages} // Boolean: list of message objects
-            showSenderName
-          />
-
-          <form onSubmit={(e) => this.onMessageSubmit(e)}>
-            <input
-              ref={(m) => {
-                this.message = m;
+                ...(this.state.useCustomBubble ? styles.selected : {})
               }}
               placeholder="Type a message..."
               className="message-input"

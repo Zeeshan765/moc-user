@@ -13,7 +13,8 @@ import NavigationIcon from "@material-ui/icons/Navigation";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Send } from "@material-ui/icons";
 import Chat from "./Chat";
-import "./Chat.css";
+import apiService from "../../services/ApiService";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -86,23 +87,44 @@ const ChatPop = (props) => {
   const classes = useStyles();
   const [chat, setChat] = React.useState();
   const [anchor, setAnchor] = React.useState();
+  const admin = "628afd313fdfbb446dbf3bbd";
 
   const handleSend = (event) => {
     console.log(chat);
   };
+  const handleConnection = (event) => {
+    apiService.post("/api/chat/create",
+      {
+        admin: admin,
+      }
+    ).then((res) => {
+      // console.log(res)
+    }
+    );
+
+  }
+  React.useEffect(() => {
+    apiService.get("/api/chat/all").then((res) => {
+      console.log(res)
+  
+    }
+    );
+  }
+  , []);
 
   return (
     <div>
       <div>
         <PopupState variant="popover" popupId="demo-popup-popover">
           {(popupState) => (
-            <div>
+            <div onClick={()=>{handleConnection()}}>
               <Fab
                 variant="extended"
                 color="primary"
                 aria-label="add"
                 className={classes.margin}
                 {...bindTrigger(popupState)}
+                
               >
                 <NavigationIcon className={classes.extendedIcon} />
                 Chat with experts
