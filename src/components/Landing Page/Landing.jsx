@@ -10,6 +10,8 @@ import CarouselComp from "../CarouselComp/CarouselComp";
 import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Chat from "../Chat/Chat";
+import ChatPop from "../Chat/ChatPop";
+// import {msgBox} from "../Chat/msgBox";
 import Footer from "../Footer/Footer";
 
 const Landing = () => {
@@ -24,7 +26,7 @@ const Landing = () => {
     <div className="land-cointainer">
       <div className="video-section">
         <div className="bgfull">
-          <img width="2020" height="900" src={bg}></img>
+          <img width="1799" height="900" src={bg}></img>
         </div>
         <div className="content-section">
           <div className="left-content">
@@ -62,7 +64,8 @@ const Landing = () => {
           <TrendingProducts />
         </div>
       </div> */}
-      <Chat />
+   
+      <ChatPop />
       <Footer />
     </div>
   );

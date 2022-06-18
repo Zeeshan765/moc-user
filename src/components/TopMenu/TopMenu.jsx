@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     width: "100px",
-    color: "#ad69f0",
+    color: "white",
     padding: "7px",
     fontSize: "20px",
     fontWeight: "bold",
@@ -151,7 +151,7 @@ const TopMenu = (props) => {
         boxShadow: "4px 4px 8px 0px #140c1c",
         height: "80px",
       }}
-    >
+    > 
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>

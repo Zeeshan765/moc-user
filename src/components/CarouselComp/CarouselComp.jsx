@@ -15,7 +15,7 @@ const CarouselComp = () => {
         <Carousel.Item interval={1500}>
           <img className="m-block w-55" src={car1} alt="First slide" />{" "}
           <div className="divpos">
-            <Carousel.Caption className="caption">
+            <Carousel.Caption className="caption1">
               <h3>Build Your own PC</h3>
               <p>and have it at your doostep!</p>
             </Carousel.Caption>
@@ -24,7 +24,7 @@ const CarouselComp = () => {
         <Carousel.Item interval={1500}>
           <img className="m-block w-55" src={car2} alt="Second slide" />
           <div className="divpos">
-            <Carousel.Caption className="caption">
+            <Carousel.Caption className="caption2">
               <h3>Get your desired tech</h3>
               <p>with just a few clicks</p>
             </Carousel.Caption>{" "}
@@ -33,7 +33,7 @@ const CarouselComp = () => {
         <Carousel.Item interval={3000}>
           <img className="m-block w-55" src={car3} alt="Third slide" />
           <div>
-            <Carousel.Caption className="caption">
+            <Carousel.Caption className="caption3">
               <h3>In a hurry?</h3>
               <p>Here are our top picks to build your desired PC in 2022! </p>
             </Carousel.Caption>
