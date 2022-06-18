@@ -13,6 +13,7 @@ import NavigationIcon from "@material-ui/icons/Navigation";
 import { hover } from "@testing-library/user-event/dist/hover";
 import { Send } from "@material-ui/icons";
 import Chat from "./Chat";
+import "./Chat.css";
 
 const useStyles = makeStyles((theme) => ({
   margin: {

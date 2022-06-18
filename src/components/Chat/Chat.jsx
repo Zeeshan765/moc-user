@@ -1,6 +1,8 @@
 import React from "react";
 // import ChatFeed from "react-chat-ui";/
 import { ChatFeed, ChatBubble, BubbleGroup, Message } from "react-chat-ui";
+// import "./Chat.css";
+import { Send } from "@material-ui/icons";
 
 const styles = {
   button: {
@@ -16,22 +18,22 @@ const styles = {
     paddingBottom: 8,
     paddingLeft: 16,
     paddingRight: 16,
-    outline: "none"
+    outline: "none",
   },
   selected: {
     color: "#fff",
     backgroundColor: "#0084FF",
-    borderColor: "#0084FF"
-  }
+    borderColor: "#0084FF",
+  },
 };
 
 const users = {
   0: "You",
   Mark: "Mark",
-  2: "Evan"
+  2: "Evan",
 };
 
-const customBubble = props => (
+const customBubble = (props) => (
   <div>
     <p>{`${props.message.senderName} ${props.message.id ? "says" : "said"}: ${
       props.message.message
@@ -48,15 +50,15 @@ class Chat extends React.Component {
         new Message({
           id: 2,
           message: (
-            <p>
+            <p className="texts">
               <span>11:50:</span>Hey! Evan here. react-chat-ui is pretty dooope.
             </p>
           ),
-          senderName: "Evan"
-        })
+          senderName: "Evan",
+        }),
       ],
       useCustomBubble: false,
-      curr_user: 0
+      curr_user: 0,
     };
   }
 
@@ -80,7 +82,7 @@ class Chat extends React.Component {
     const newMessage = new Message({
       id: recipient,
       message,
-      senderName: users[recipient]
+      senderName: users[recipient],
     });
     prevState.messages.push(newMessage);
     this.setState(this.state);
@@ -88,30 +90,12 @@ class Chat extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="chatfeed-wrapper">
-          <ChatFeed
-            chatBubble={this.state.useCustomBubble && customBubble}
-            maxHeight={250}
-            messages={this.state.messages} // Boolean: list of message objects
-            showSenderName
-          />
-
-          <form onSubmit={e => this.onMessageSubmit(e)}>
-            <input
-              ref={m => {
-                this.message = m;
-              }}
-              placeholder="Type a message..."
-              className="message-input"
-            />
-          </form>
-
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div className="containerChat">
+        {/* <div style={{ display: "flex", justifyContent: "space-around" }}>
             <button
               style={{
                 ...styles.button,
-                ...(this.state.curr_user === 0 ? styles.selected : {})
+                ...(this.state.curr_user === 0 ? styles.selected : {}),
               }}
               onClick={() => this.onPress(0)}
             >
@@ -120,7 +104,7 @@ class Chat extends React.Component {
             <button
               style={{
                 ...styles.button,
-                ...(this.state.curr_user === "Mark" ? styles.selected : {})
+                ...(this.state.curr_user === "Mark" ? styles.selected : {}),
               }}
               onClick={() => this.onPress("Mark")}
             >
@@ -129,28 +113,32 @@ class Chat extends React.Component {
             <button
               style={{
                 ...styles.button,
-                ...(this.state.curr_user === 2 ? styles.selected : {})
+                ...(this.state.curr_user === 2 ? styles.selected : {}),
               }}
               onClick={() => this.onPress(2)}
             >
               Evan
             </button>
-          </div>
-          <div
-            style={{ display: "flex", justifyContent: "center", marginTop: 10 }}
-          >
-            <button
-              style={{
-                ...styles.button,
-                ...(this.state.useCustomBubble ? styles.selected : {})
+          </div> */}
+        <div className="chatfeed-wrapper">
+          <ChatFeed
+            chatBubble={this.state.useCustomBubble && customBubble}
+            maxHeight={250}
+            messages={this.state.messages} // Boolean: list of message objects
+            showSenderName
+          />
+
+          <form onSubmit={(e) => this.onMessageSubmit(e)}>
+            <input
+              ref={(m) => {
+                this.message = m;
               }}
-              onClick={() =>
-                this.setState({ useCustomBubble: !this.state.useCustomBubble })
-              }
-            >
-              Custom Bubbles
-            </button>
-          </div>
+              placeholder="Type a message..."
+              className="message-input"
+            />
+           
+          </form>
+          <Send className="sendIcon" />
         </div>
       </div>
     );

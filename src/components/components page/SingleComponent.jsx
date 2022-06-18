@@ -31,7 +31,7 @@ const SingleComponent = (props) => {
   };
   return (
     <>
-      <Row s={1} md={2} className="g-4">
+      <Row xs={1} md={4} className="g-4">
         {Array.from({ length: 1 }).map((_, id) => (
           <Col>
             <Card

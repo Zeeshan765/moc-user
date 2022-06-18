@@ -4,7 +4,7 @@
   height: 400vh; */
 }
 .filterBox {
-  width: 10vmax;
+  width: 10vmax; 
   margin-top: 30px;
   /* position: absolute;
   top: 10vmax;
@@ -53,13 +53,16 @@
   height: 40px;
   color: rgb(255, 255, 255);
 }
-.right-container {
+.right-containerPeriph{
   margin-left: 30px;
   width: 100%;
+  float: left;
+  margin-left: -260px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-right: 40px;
   position: relative;
   height: 100%;
 }
@@ -81,6 +84,7 @@
 .paginationText{
   font-size: 18px;
   width: 100%;
+  color: white;
   margin-top: -55px;
 }
 .paginationTextUP{

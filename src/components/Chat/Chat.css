@@ -1,16 +1,120 @@
-.chatBox {
-  background-image: linear-gradient(to bottom right, red, yellow) !important;
+.containerChat {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, ubuntu;
+  background: rgb(100, 88, 107);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
-.hrlinebox {
-  margin-top: 25px !important;
+
+
+.containerChat {
+  max-width: 850px;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 500px;
 }
-.popoverContainer {
+
+.install {
+  text-align: center;
+  margin: 20px auto;
+}
+
+code {
+  margin: 20px auto;
+  background-color: white;
+  padding: 10px 20px;
+}
+
+.message-input {
+  border: none;
+  border-top: 3px solid rgb(29, 3, 32);
+  font-size: 16px;
+  padding: 30px;
   width: 100%;
-  height: 20% !important;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 99999;
-  display: none;
+margin-top: 160px;
+background-color: rgb(199, 193, 204);
 }
+
+.message-input:focus {
+  outline: none;
+}
+
+.chatfeed-wrapper {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  max-width: 450px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  padding-bottom: 20px;
+ 
+}
+.texts{
+  color: #000000;
+}
+
+#chat-panel {
+  padding: 0px 10px;
+}
+
+.chat-history {
+  display: block;
+  min-height: 250px;
+}
+
+.outer {
+  display: block;
+  height: 50%;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.inner {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sendIcon{
+  color: #050505;
+  float: right;
+}
+
+
+
+/* .container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.chat-list {
+  min-width: 240px;
+  max-width: 380px;
+  overflow: auto;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-list {
+  flex: 1;
+  min-width: 140px;
+  overflow: auto;
+}
+
+.input-area {
+  height: 50px;
+  background: red;
+} */

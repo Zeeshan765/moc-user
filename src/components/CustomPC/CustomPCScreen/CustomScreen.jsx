@@ -196,7 +196,7 @@ const CustomScreen = (props) => {
 
   if (proc === true)
     return (
-      <div className="Maincontainer">
+      <div className="Maincontainer"> 
         <div className="HeadText">
           <p className="TextStyle"> Select your Processor</p>
         </div>

@@ -38,7 +38,7 @@ const SelectionPage = () => {
   };
 
   return (
-    <div className="selection-container">
+    <div className="selection-container"> 
       <h1 className="mainheading">Welcome to Multiverse of Computers</h1>
       <div className="selection-wrapper">
         <>

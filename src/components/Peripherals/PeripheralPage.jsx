@@ -9,7 +9,9 @@ import axios from "axios";
 import apiService from "../../services/ApiService";
 import Singleperipheral from "./Singleperipheral";
 import Pagination from "@material-ui/lab/Pagination";
-
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import {
   AccountBox,
   AccountCircleTwoTone,
@@ -94,115 +96,128 @@ const PeripheralPage = (props) => {
   return (
     <>
       <div className="MainContainer">
-        <div className="mainTitle">
-          Peripherals{" "}
-          <input
-            className="search"
-            placeholder="Search..."
-            onChange={(e) => setKeyword(e.target.value.toLowerCase())}
-          />
-          <Search className="IconStyle" />{" "}
-        </div>
-        
-        <div className="peripheral-container">
-          <div className="left-container">
-            <div className="filterBox">
-              <Slider
-                className="sliderText"
-                value={price} 
-                onChange={priceHandler}
-                valueLabelDisplay="on"
-                aria-labelledby="range-slider"
-                min={500}
-                step={1000}
-                max={100000}
+        <Container className="uppercontain">
+          <Row>
+            <div className="mainTitle">
+              Peripherals{" "}
+              <input
+                className="search"
+                placeholder="Search..."
+                onChange={(e) => setKeyword(e.target.value.toLowerCase())}
               />
-
-              <Typography className="priceRangeText">
-                Set price range
-              </Typography>
+              {/* <Search className="IconStyle" />{" "} */}
             </div>
-            <button className="left-btn" onClick={() => getData()}>
-              All
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("Keyboard");
-              }}
-            >
-              Keyboards
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("Mouse");
-              }}
-            >
-              Mouse
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("controller");
-              }}
-            >
-              Controller
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("Monitor");
-              }}
-            >
-              Monitor
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("Headphone");
-              }}
-            >
-              Headphones
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("speaker");
-              }}
-            >
-              Speakers
-            </button>
-            <button
-              className="left-btn"
-              onClick={() => {
-                filterResult("Mic");
-              }}
-            >
-              Mic
-            </button>
-          </div>
-          <div className="right-container">
-            {menuData?.map((data, index) => (
-              <Singleperipheral key={data._id} data={data} />
-            ))}
-            <Pagination
-              count={Math.ceil(total / perPage)}
-              variant="outlined"
-              className="pagination"
-              shape="circular"
-              color="primary"
-              size="large"
-              onChange={(e, value) => {
-                console.log(value);
-                props.history.push("/peripherals/" + value);
-              }}
-            />{" "}
-            <p className="paginationText">
-              Total: <b>{total}</b> Showing <b>{(page - 1) * perPage}</b> to{" "}
-              <b>{(page - 1) * perPage + menuData.length}</b>
-            </p>
-          </div>
+          </Row>
+        </Container>
+        <div className="peripheral-container">
+          <Container className="sidebarContainer">
+            <Col xs={6} md={4}>
+              <div className="left-container">
+                <div className="filterBox">
+                  <Slider
+                    className="sliderText"
+                    value={price}
+                    onChange={priceHandler}
+                    valueLabelDisplay="on"
+                    aria-labelledby="range-slider"
+                    min={500}
+                    step={1000}
+                    max={100000}
+                  />
+
+                  <Typography className="priceRangeText">
+                    Set price range
+                  </Typography>
+                </div>
+                <button className="left-btn" onClick={() => getData()}>
+                  All
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("Keyboard");
+                  }}
+                >
+                  Keyboards
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("Mouse");
+                  }}
+                >
+                  Mouse
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("controller");
+                  }}
+                >
+                  Controller
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("Monitor");
+                  }}
+                >
+                  Monitor
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("Headphone");
+                  }}
+                >
+                  Headphones
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("speaker");
+                  }}
+                >
+                  Speakers
+                </button>
+                <button
+                  className="left-btn"
+                  onClick={() => {
+                    filterResult("Mic");
+                  }}
+                >
+                  Mic
+                </button>
+              </div>
+            </Col>
+          </Container>
+          <Container>
+            <Row>
+              <Col sm={12} className="right-containerPeriph">
+                
+                  {menuData?.map((data, index) => (
+                    <Singleperipheral key={data._id} data={data} />
+                  ))}
+                  <Pagination
+                    count={Math.ceil(total / perPage)}
+                    variant="outlined"
+                    className="pagination"
+                    shape="circular"
+                    color="secondary"
+                    size="large"
+                    onChange={(e, value) => {
+                      console.log(value);
+                      props.history.push("/peripherals/" + value);
+                    }}
+                  />{" "}
+                  <p className="paginationText">
+                    Total: <b>{total}</b> Showing <b>{(page - 1) * perPage}</b>{" "}
+                    to <b>{(page - 1) * perPage + menuData.length}</b>
+                  </p>
+                
+              </Col>
+            </Row>
+          </Container>
         </div>
       </div>
     </>
