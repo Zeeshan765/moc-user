@@ -35,6 +35,7 @@ const users = {
 };
 
 const customBubble = (props) => (
+  
   <div>
     <p>{`${props.message.senderName} ${props.message.id ? "says" : "said"}: ${
       props.message.message
@@ -43,13 +44,15 @@ const customBubble = (props) => (
 );
 
 class Chat extends React.Component {
+
+  
   constructor() {
     super();
     this.state = {
       messages: [
     
         new Message({
-          id: 2,
+          // id: {this.props.chat},
           message: (
             <p>
               <span>"Weclome to Multiverse of Computers" </span>
@@ -114,7 +117,7 @@ class Chat extends React.Component {
           <ChatFeed
             chatBubble={this.state.useCustomBubble && customBubble}
             maxHeight={250}
-            messages={this.state.messages} // Boolean: list of message objects
+            messages={this.props.chat} // Boolean: list of message objects
             showSenderName
           />
 
