@@ -6,7 +6,7 @@ import budget2 from "../../Assets/budgetpc2.png";
 import budget3 from "../../Assets/budgetpc3.png";
 import "./BudgetPage.css";
 import {
-  Navbar,
+  Navbar, 
   NavDropdown,
   Nav,
   Container,

@@ -32,32 +32,44 @@ const ReqComp = () => {
   return (
     <>
       <div className="pc-container">
-        <Card
-          style={{ width: "22rem" }}
-          className="card text-white"
-          id="ReqcardStyle"
-        >
-          <Card.Img src={low} className="ReqimgStyle" variant="top" alt="" />
-          <Card.Body>
-            <Card.Title>Low PC</Card.Title>
-            <Card.Text>
-              <h4>Price Range: Rs. 30000-45000</h4>
-              <p>From office use to Low end gaming</p>
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <Button onClick={() => getLowPC()} className="Reqcard-btnView">
-              View PC's
-            </Button>
-            <Button
-              onClick={() => dispatch(handleLow())}
-              className="Reqcard-btnCheck"
-            >
-              Check
-            </Button>
-          </Card.Footer>
-        </Card>
-        {/* <div className="product-box">
+        <Container>
+          <Row>
+            <Col sm>
+              <Card
+                style={{ width: "22rem" }}
+                className="card text-white"
+                id="ReqcardStyle"
+              >
+                <Card.Img
+                  src={low}
+                  className="ReqimgStyle"
+                  variant="top"
+                  alt=""
+                />
+                <Card.Body>
+                  <Card.Title>Low PC</Card.Title>
+                  <Card.Text>
+                    <h4>Price Range: Rs. 30000-45000</h4>
+                    <p>From office use to Low end gaming</p>
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button
+                    onClick={() => getLowPC()}
+                    className="Reqcard-btnView"
+                  >
+                    View PC's
+                  </Button>
+                  <Button
+                    onClick={() => dispatch(handleLow())}
+                    className="Reqcard-btnCheck"
+                  >
+                    Check
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+            {/* <div className="product-box">
           <div
             // onClick={() => sugg(cat)}
             className="upper-box"
@@ -76,32 +88,42 @@ const ReqComp = () => {
             </button>
           </div>
         </div> */}
-        <Card
-          style={{ width: "22rem" }}
-          className="card text-white"
-          id="ReqcardStyle"
-        >
-          <Card.Img src={med} className="ReqimgStyle" variant="top" alt="" />
-          <Card.Body>
-            <Card.Title>Medium PC</Card.Title>
-            <Card.Text>
-              <h4>Price Range: Rs. 50000-80000</h4>
-              <p>For Intermediate gaming and software developement</p>
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <Button onClick={() => getMedPC()} className="Reqcard-btnView">
-              View PC's
-            </Button>
-            <Button
-              onClick={() => dispatch(handleMed())}
-              className="Reqcard-btnCheck"
-            >
-              Check
-            </Button>
-          </Card.Footer>
-        </Card>
-        {/* <div className="product-box">
+            <Col sm>
+              <Card
+                style={{ width: "22rem" }}
+                className="card text-white"
+                id="ReqcardStyle"
+              >
+                <Card.Img
+                  src={med}
+                  className="ReqimgStyle"
+                  variant="top"
+                  alt=""
+                />
+                <Card.Body>
+                  <Card.Title>Medium PC</Card.Title>
+                  <Card.Text>
+                    <h4>Price Range: Rs. 50000-80000</h4>
+                    <p>For Intermediate gaming and software developement</p>
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button
+                    onClick={() => getMedPC()}
+                    className="Reqcard-btnView"
+                  >
+                    View PC's
+                  </Button>
+                  <Button
+                    onClick={() => dispatch(handleMed())}
+                    className="Reqcard-btnCheck"
+                  >
+                    Check
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+            {/* <div className="product-box">
           <div className="upper-box">
             <img src={med} alt="" />
           </div>
@@ -117,32 +139,42 @@ const ReqComp = () => {
             </button>
           </div>
         </div> */}
-        <Card
-          style={{ width: "22rem" }}
-          className="card text-white"
-          id="ReqcardStyle"
-        >
-          <Card.Img src={high} className="ReqimgStyle" variant="top" alt="" />
-          <Card.Body>
-            <Card.Title>High End PC</Card.Title>
-            <Card.Text>
-              <h4>Price Range: Rs. 90000-120000+</h4>
-              <p>For High End Gaming, Streaming and 3d Modelling</p>
-            </Card.Text>
-          </Card.Body>
-          <Card.Footer>
-            <Button onClick={() => getHighPC()} className="Reqcard-btnView">
-              View PC's
-            </Button>
-            <Button
-              onClick={() => dispatch(handleHigh())}
-              className="Reqcard-btnCheck"
-            >
-              Check
-            </Button>
-          </Card.Footer>
-        </Card>
-        {/* <div>
+            <Col sm>
+              <Card
+                style={{ width: "22rem" }}
+                className="card text-white"
+                id="ReqcardStyle"
+              >
+                <Card.Img
+                  src={high}
+                  className="ReqimgStyle"
+                  variant="top"
+                  alt=""
+                />
+                <Card.Body>
+                  <Card.Title>High End PC</Card.Title>
+                  <Card.Text>
+                    <h4>Price Range: Rs. 90000-120000+</h4>
+                    <p>For High End Gaming, Streaming and 3d Modelling</p>
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button
+                    onClick={() => getHighPC()}
+                    className="Reqcard-btnView"
+                  >
+                    View PC's
+                  </Button>
+                  <Button
+                    onClick={() => dispatch(handleHigh())}
+                    className="Reqcard-btnCheck"
+                  >
+                    Check
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+            {/* <div>
           <div className="product-box">
             <div className="upper-box">
               <img src={high} alt="" />
@@ -160,6 +192,8 @@ const ReqComp = () => {
             </div>
           </div>
         </div> */}
+          </Row>
+        </Container>
       </div>
     </>
   );
