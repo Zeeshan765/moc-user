@@ -17,41 +17,43 @@ function HddComp({ product }) {
   const dispatch = useDispatch();
   return (
     <>
-      <Row s={1} md={2} className="g-4">
-        {Array.from({ length: 1 }).map((_, id) => (
-          <Col>
-            <Card
-              style={{ width: "22rem" }}
-              className="card text-white"
-              id="Customcards"
-            >
-              <Card.Img
-                className="imgStyle"
-                variant="top"
-                src={product.picture}
-                alt=""
-              />
-              <Card.Body>
-                <Card.Title>{product.name}</Card.Title>
-                <Card.Text>
-                  <h4>{product.price} pkr</h4>
-                  <p>{product.description}</p>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <Button
-                  className="card-btn"
-                  onClick={() => {
-                    dispatch(addHdd(product));
-                  }}
-                >
-                  Add
-                </Button>
-              </Card.Footer>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+       <Container className="ProcessorCards">
+        <Row>
+          {Array.from({ length: 1 }).map((_, id) => (
+            <Col xs={1} md={12}>
+              <Card
+                style={{ width: "22rem" }}
+                className="card text-white"
+                id="CustomcardsCustomS"
+              >
+                <Card.Img
+                  className="imgStyle"
+                  variant="top"
+                  src={product.picture}
+                  alt=""
+                />
+                <Card.Body>
+                  <Card.Title>{product.name}</Card.Title>
+                  <Card.Text>
+                    <h4>{product.price} pkr</h4>
+                    <p>{product.description}</p>
+                  </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <Button
+                    className="card-btn"
+                    onClick={() => {
+                      dispatch(addHdd(product));
+                    }}
+                  >
+                    Add
+                  </Button>
+                </Card.Footer>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </>
     // <>
     //   <div className="card-container">

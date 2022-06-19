@@ -3,6 +3,7 @@ import React from "react";
 import { ChatFeed, ChatBubble, BubbleGroup, Message } from "react-chat-ui";
 import apiService from "../../services/ApiService";
 import { Send } from "@material-ui/icons";
+import "./Chat.css";
 
 const styles = {
   button: {
@@ -108,7 +109,7 @@ class Chat extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="containerChat">
         <div className="chatfeed-wrapper">
           <ChatFeed
             chatBubble={this.state.useCustomBubble && customBubble}

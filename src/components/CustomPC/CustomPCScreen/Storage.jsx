@@ -25,7 +25,7 @@ function Storage(props) {
   return (
     <div className="parentStorage">
       <h1 className="hddtitle">HDD</h1>
-      <p className="SataPorts">
+      <p className="SataPorts"> 
         Free Sata Ports: {useSelector(getfixedHddCount)}
         {/* <button onClick={() => dispatch(resetSataPorts())} className="reset">
           {" "}

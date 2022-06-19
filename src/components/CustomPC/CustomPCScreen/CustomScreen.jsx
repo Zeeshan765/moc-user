@@ -23,6 +23,9 @@ import {
 } from "../../../Redux/cartRedux";
 import { Button } from "react-bootstrap";
 import { Box, Stepper, Step, StepLabel, makeStyles } from "@material-ui/core";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const steps = [
   "CPU",
@@ -62,6 +65,9 @@ const CustomScreen = (props) => {
       "& .Mui-disabled .MuiStepIcon-root": {
         color: "grey",
         fontSize: "1.5rem",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "20px",
       },
     },
   }));
@@ -196,38 +202,39 @@ const CustomScreen = (props) => {
 
   if (proc === true)
     return (
-      <div className="Maincontainer"> 
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your Processor</p>
         </div>
-        <Box className="stepBox" sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper
-            className={c.root}
-            sx={{ color: "black" }}
-            activeStep={activeStep}
-          >
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box className="stepBox" sx={{ width: "70%", marginLeft: "200px" }}>
+            <Stepper
+              className={c.root}
+              sx={{ color: "black" }}
+              activeStep={activeStep}
+            >
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                <Box sx={{ flex: "1 1 auto" }} />
-              </Box>
-            </React.Fragment>
-          )}
-        </Box>
-
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment>
+                <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                  <Box sx={{ flex: "1 1 auto" }} />
+                </Box>
+              </React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Processors />
         <Button className="next" onClick={() => step2()}>
           Next <i class="arrow right"></i>
@@ -236,34 +243,35 @@ const CustomScreen = (props) => {
     );
   else if (gpu === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your GPU</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "70%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <GPU />
         <Button className="back" onClick={() => handleback1()}>
-        <i class="arrow left"></i>Back
+          <i class="arrow left"></i>Back
         </Button>{" "}
-        
         <Button className="next" onClick={() => step3()}>
           Next <i class="arrow right"></i>
         </Button>
@@ -271,32 +279,34 @@ const CustomScreen = (props) => {
     );
   else if (mobo === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your Motherboard</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "75%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Motherboard />
         <Button className="back" onClick={() => handleback2()}>
-        <i class="arrow left"></i>Back
+          <i class="arrow left"></i>Back
         </Button>
         <Button className="next" onClick={() => step4()}>
           Next <i class="arrow right"></i>
@@ -305,32 +315,34 @@ const CustomScreen = (props) => {
     );
   else if (ram === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your RAM</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "70%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Ram />
         <Button className="back" onClick={() => handleback3()}>
-        <i class="arrow left"></i> Back
+          <i class="arrow left"></i> Back
         </Button>
         <Button className="next" onClick={() => step5()}>
           Next <i class="arrow right"></i>
@@ -339,32 +351,34 @@ const CustomScreen = (props) => {
     );
   else if (hdd === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your HDD/SSD</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "76%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Storage />
         <Button className="back" onClick={() => handleback4()}>
-        <i class="arrow left"></i>  Back
+          <i class="arrow left"></i> Back
         </Button>
         <Button className="next" onClick={() => step6()}>
           Next <i class="arrow right"></i>
@@ -373,32 +387,34 @@ const CustomScreen = (props) => {
     );
   else if (psu === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your Power Supply</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "76%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <PSUScreen />
         <Button className="back" onClick={() => handleback5()}>
-        <i class="arrow left"></i>  Back
+          <i class="arrow left"></i> Back
         </Button>
         <Button className="next" onClick={() => step7()}>
           Next <i class="arrow right"></i>
@@ -407,32 +423,34 @@ const CustomScreen = (props) => {
     );
   else if (casing === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your Casing</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "79%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment></React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment></React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Casing />
         <Button className="back" onClick={() => handleback6()}>
-        <i class="arrow left"></i>  Back
+          <i class="arrow left"></i> Back
         </Button>
         <Button className="next" onClick={() => step8()}>
           Next <i class="arrow right"></i>
@@ -441,36 +459,38 @@ const CustomScreen = (props) => {
     );
   else if (cooling === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <div className="HeadText">
           <p className="TextStyle"> Select your Cooler</p>
         </div>
-        <Box sx={{ width: "50%", marginLeft: "500px" }}>
-          <Stepper className={c.root} activeStep={activeStep}>
-            {steps.map((label, index) => {
-              const stepProps = {};
-              const labelProps = {};
+        <Container className="stepperContainer">
+          <Box sx={{ width: "82%", marginLeft: "200px" }}>
+            <Stepper className={c.root} activeStep={activeStep}>
+              {steps.map((label, index) => {
+                const stepProps = {};
+                const labelProps = {};
 
-              return (
-                <Step key={label} {...stepProps}>
-                  <StepLabel {...labelProps}>{label}</StepLabel>
-                </Step>
-              );
-            })}
-          </Stepper>
-          {activeStep === steps.length ? (
-            <React.Fragment>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
-                <Box sx={{ flex: "1 1 auto" }} />
-              </Box>
-            </React.Fragment>
-          ) : (
-            <React.Fragment></React.Fragment>
-          )}
-        </Box>
+                return (
+                  <Step key={label} {...stepProps}>
+                    <StepLabel {...labelProps}>{label}</StepLabel>
+                  </Step>
+                );
+              })}
+            </Stepper>
+            {activeStep === steps.length ? (
+              <React.Fragment>
+                <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                  <Box sx={{ flex: "1 1 auto" }} />
+                </Box>
+              </React.Fragment>
+            ) : (
+              <React.Fragment></React.Fragment>
+            )}
+          </Box>
+        </Container>
         <Cooling />
         <Button className="back" onClick={() => handleback7()}>
-        <i class="arrow left"></i> Back
+          <i class="arrow left"></i> Back
         </Button>
         <Button className="btnFinishBuild" onClick={() => finish()}>
           Finish Building
@@ -479,7 +499,7 @@ const CustomScreen = (props) => {
     );
   else if (fin === true)
     return (
-      <div className="Maincontainer">
+      <div className="MaincontainerCustom">
         <h1 style={{ color: "Purple" }}>Build Complete</h1>
 
         <BuildCompleted />

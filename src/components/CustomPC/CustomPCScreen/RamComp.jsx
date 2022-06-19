@@ -22,13 +22,14 @@ function RamComp({ product }) {
   const dispatch = useDispatch();
   return (
     <>
-      <Row s={1} md={2} className="g-4">
+    <Container className="ProcessorCards">
+      <Row>
         {Array.from({ length: 1 }).map((_, id) => (
-          <Col>
+          <Col xs={1} md={12}>
             <Card
               style={{ width: "22rem" }}
               className="card text-white"
-              id="Customcards"
+              id="CustomcardsCustomS"
             >
               <Card.Img
                 className="imgStyle"
@@ -81,6 +82,7 @@ function RamComp({ product }) {
           </Col>
         ))}
       </Row>
+      </Container>
     </>
     // <>
     //   <div className="card-container">

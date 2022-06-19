@@ -1,18 +1,18 @@
 .containerChat {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, ubuntu;
-  background: rgb(100, 88, 107);
+  background: rgb(90, 86, 95);
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
+  border-radius: 23px;
 }
-
 
 .containerChat {
   max-width: 850px;
   margin: 0 auto;
-  margin-top: 10px;
-  height: 500px;
+  /* margin-top: 10px; */
+  height: 550px;
 }
 
 .install {
@@ -32,8 +32,8 @@ code {
   font-size: 16px;
   padding: 30px;
   width: 100%;
-margin-top: 160px;
-background-color: rgb(199, 193, 204);
+  margin-top: 160px;
+  background-color: rgb(199, 193, 204);
 }
 
 .message-input:focus {
@@ -47,9 +47,9 @@ background-color: rgb(199, 193, 204);
   margin: 0 auto;
   border: 1px solid #ddd;
   padding-bottom: 20px;
- 
+  border-radius: 23px;
 }
-.texts{
+.texts {
   color: #000000;
 }
 
@@ -77,12 +77,10 @@ background-color: rgb(199, 193, 204);
   text-align: center;
 }
 
-.sendIcon{
+.sendIcon {
   color: #050505;
   float: right;
 }
-
-
 
 /* .container {
   display: flex;
