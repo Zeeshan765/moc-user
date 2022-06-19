@@ -90,7 +90,7 @@ const PeripheralPage = (props) => {
   //   console.log(catName);
   //   console.log(result);
   //   setCatData(result);
-  //   console.log(catData);
+  //   console.log(catData); 
   // };
 
   return (
@@ -98,7 +98,7 @@ const PeripheralPage = (props) => {
       <div className="MainContainer">
         <Container className="uppercontain">
           <Row>
-            <div className="mainTitle">
+            <div className="mainTitlePer">
               Peripherals{" "}
               <input
                 className="search"

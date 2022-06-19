@@ -1,0 +1,26 @@
+.Navbarnew{
+height: 70px !important;
+background-color: #1f1e20 !important;
+}
+.linkstyle{
+font-size: 20px !important;
+margin-bottom: 45px;
+}
+.linkstyle:hover{
+    background-color: rgb(135, 62, 202);
+    transition: 0.5s;
+    border-radius: 10px;
+    color: #e0d3ed;
+}
+.NavBar{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+}
+.brandlogo{
+    width: 100px;
+    height: 100px;
+    margin-top: 1px;
+    margin-left: -80px;
+    font-size: 35px;
+}

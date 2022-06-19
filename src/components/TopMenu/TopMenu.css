@@ -138,9 +138,9 @@ nav {
 .cartCount {
   text-decoration: none !important;
   font-size: 19px !important;
-  background-color: #a839ed !important;
+  background-color: #202020 !important;
   border-radius: 120px !important;
   padding: 3px !important;
-  margin-top: 17px !important;
-  margin-bottom: -10px;
+  margin-bottom: 150px !important;
+  padding-top: -30px;
 }

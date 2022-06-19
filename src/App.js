@@ -5,6 +5,7 @@ import Landing from "./components/Landing Page/Landing";
 import Profile from "./components/Profile/Profile";
 import Login from "./components/Login/Login";
 import TopMenu from "./components/TopMenu/TopMenu";
+
 import SelectionPage from "./components/Selection Page/SelectionPage";
 import BudgetPage from "./components/Budget/BudgetPage";
 import LowBudgetPage from "./components/Budget/Low Budget/LowBudgetPage";
@@ -35,6 +36,7 @@ import UserOrder from "./components/my orders/UserOrder";
 import SimpleSuccess from "./components/order success/SimpleSuccess";
 import Thankyou from "./components/CustomPC/CustomPCScreen/Thankyou";
 import Vieworder from "./components/my orders/Vieworder";
+import NavBar from "./components/TopMenu/NavBar";
 const App = () => {
   const [clicked, setClicked] = React.useState(null);
   const getClicked = () => {
@@ -45,6 +47,7 @@ const App = () => {
       <Router>
         <ToastContainer />
         <TopMenu clicked={clicked} />
+        {/* <NavBar clicked={clicked} /> */}
         <Switch>
           <Route path="/" exact component={Landing} />
           <Route path="/register" exact component={Register} />

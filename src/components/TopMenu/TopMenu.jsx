@@ -194,11 +194,9 @@ const TopMenu = (props) => {
               </h4>
             </Popup>
 
-            //<button onClick={handlelogout}>Logout</button>
+           
           )}
-          {/* <Link to="/CustomBuildCart">
-          <img src={pcbuildicon} alt="" />
-        </Link> */}
+         
           <Link to="/shop-cart">
             <ShoppingCart className={classes.iconCart} />
             <span className="cartCount">{count}</span>
