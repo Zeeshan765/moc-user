@@ -13,7 +13,7 @@ margin-top: 150px !important;
 }
 .row{
     align-items: center !important;
-    justify-content: center !important;
+    /* justify-content: center !important;  */
 
 }
 .iconsFooter{

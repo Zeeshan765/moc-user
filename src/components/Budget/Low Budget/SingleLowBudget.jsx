@@ -1,7 +1,7 @@
-import React from 'react';
-import { useHistory } from 'react-router';
+import React from "react";
+import { useHistory } from "react-router";
 
-import './SingleLowBudget.css';
+import "./SingleLowBudget.css";
 import {
   Navbar,
   NavDropdown,
@@ -24,18 +24,18 @@ const SingleLowBudget = ({ product }) => {
     console.log(id);
     // window.location.href = '/productdetail/' + id;
     //history.push('/productdetail');
-    history.push('/productdetail/' + id);
+    history.push("/productdetail/" + id);
   };
 
   return (
     <>
-    <Row s={1} md={2} className="g-4">
+      <Row >
         {Array.from({ length: 1 }).map((_, id) => (
-          <Col>
+          <Col xs={4}>
             <Card
               style={{ width: "22rem" }}
               className="card text-white"
-              id="cardStyle"
+              id="cardStyleLB"
             >
               <Card.Img
                 className="imgStyle"
@@ -47,7 +47,7 @@ const SingleLowBudget = ({ product }) => {
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
                   <h4> Rs. {product.price}</h4>
-                  <p style={{fontSize: "15px"}}>{product.description}</p>
+                  <p style={{ fontSize: "15px" }}>{product.description}</p>
                 </Card.Text>
               </Card.Body>
               <Card.Footer>
@@ -59,35 +59,8 @@ const SingleLowBudget = ({ product }) => {
           </Col>
         ))}
       </Row>
-
-      {/* <div className='product-box'>
-        <div className='upper-box'>
-          <img src={product.picture} alt='' />
-        </div>
-        <div className='lower-box'>
-          <h3>{product.name}</h3>
-          <h4>{product.price}</h4>
-          <p>{product.description}</p>
-          <button className='btn-1'onClick={handleView}>View Detail</button>
-        </div>
-      </div> */}
     </>
   );
 };
 
 export default SingleLowBudget;
-
-/*
-<div className="card-wrapper">
-        <div className="card-box">
-          <div className="upper-card">
-            <img src={data.image} alt="" />
-          </div>
-          <div className="lower-card">
-            <h3>{data.name}</h3>
-            <h4>{data.price}</h4>
-            <p>{data.description}</p>
-            <button className="btn-view">View Detail</button>
-          </div>
-        </div>
-      </div>*/

@@ -1,33 +1,61 @@
+#CustomCardBudget {
+  height: 500px;
+  margin-left: -23px !important;
+  width: 430px !important;
+  margin-top: 60px;
+  background-color: #1b1b1b !important; 
+  box-shadow: 4px 8px 8px 0 rgba(0, 0, 0, 0.2),
+    4px 8px 30px 10px rgba(27, 13, 36, 0.19) !important;
+  cursor: pointer;
+}
+#CustomCardBudget:hover {
+  box-shadow: 4px 8px 8px 0 #1a0c27, 4px 8px 30px 10px #300957 !important;
+  transition: 0.5s;
+}
 .budget-container {
-  margin-top: 1rem;
+  margin-top: -1rem;
   background-color: rgb(68, 67, 68);
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 50px;
+  padding-bottom: 93px;
   width: 100%;
-  position: relative;
-  height: 650px;
-  
+  height: 950px;
 }
 .cardDesc {
   text-align: center;
 }
 .budget-title {
   margin-top: 6px;
-  background-color: rgb(207, 46, 73);
   width: 100%;
   text-align: center;
 }
 .budget-title h1 {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   color: rgb(247, 236, 236);
 }
-
+.TextStyleBudget{
+  color: rgb(246, 239, 248);
+  font-weight: 550;
+  margin-left: 90px;
+  /* margin-top: 30px; */
+  border-left: 8px solid #8a15fc;
+  border-radius: 7px;
+  padding: 10px;
+  margin-top: 70px;
+  border-left: 12px solid #8a15fc;
+  border-right: 12px solid #8a15fc;
+  border-radius: 7px;
+  background-color: #171718 !important;
+  justify-content: center;
+  text-align: center;
+  margin-right: 40px;
+  margin-left: 40px;
+}
 .budget-wrapper {
   margin-top: 1rem;
-  width: 100%;
-  height: 550px;
-  display: flex;
-  justify-content: space-around;
+  margin-left: 10px;
+  width: 1500px;
+  height: 600px;
+  justify-content: center;
 }
 .budget-box {
   margin-top: 2.5rem;
@@ -39,7 +67,6 @@
 .first-half {
   width: 100%;
   height: 260px;
-  
 }
 .first-half img {
   width: 100%;
@@ -53,7 +80,6 @@
   width: 100%;
   height: 210px;
   text-align: center;
-  
 }
 .second-half h2 {
   margin-top: 1.5rem;

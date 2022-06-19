@@ -99,7 +99,7 @@ class Footer extends Component {
                  
                 </div>
                
-              </div>
+              </div> 
             </div>
             <hr />
             <div className="row justify-content-center">

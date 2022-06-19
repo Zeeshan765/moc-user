@@ -29,6 +29,7 @@ const SingleMidBudget = ({ data }) => {
 
   return (
     <>
+
     <Row s={1} md={2} className="g-4">
         {Array.from({ length: 1 }).map((_, id) => (
           <Col>
