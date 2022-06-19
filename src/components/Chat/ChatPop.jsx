@@ -85,20 +85,21 @@ const useStyles = makeStyles((theme) => ({
 
 const ChatPop = (props) => {
   const classes = useStyles();
-  const [chat, setChat] = React.useState();
+  const [chat, setChat] = React.useState(null);
   const [anchor, setAnchor] = React.useState();
   const admin = "628afd313fdfbb446dbf3bbd";
-
-  const handleSend = (event) => {
-    console.log(chat);
-  };
+console.log("chat");
+console.log(chat)
+  
   const handleConnection = (event) => {
     apiService.post("/api/chat/create",
       {
         admin: admin,
       }
     ).then((res) => {
-      // console.log(res)
+      console.log("connection")
+      setChat(res.data._id);
+       console.log(res.data._id)
     }
     );
 
@@ -106,6 +107,7 @@ const ChatPop = (props) => {
   React.useEffect(() => {
     apiService.get("/api/chat/all").then((res) => {
       console.log(res)
+      //  setChat(res.data._id);
   
     }
     );
@@ -144,7 +146,7 @@ const ChatPop = (props) => {
                 }}
               >
                 <div className="popoverContainer">
-                 <Chat/>
+                 <Chat chat={chat}/>
                 </div>
               </Popover>
             </div>
